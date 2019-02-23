@@ -1,0 +1,4 @@
+﻿  MyForm.cpp
+  MyForm.obj : Managed 程式碼存在時不支援 /DEBUG:FASTLINK; 正在以 /DEBUG:FULL 重新啟動連結
+  WinForm_TrackTest.vcxproj -> c:\users\ywchen1994\documents\visual studio 2015\Projects\WinForm_TrackTest\Debug\WinForm_TrackTest.exe
+  WinForm_TrackTest.vcxproj -> c:\users\ywchen1994\documents\visual studio 2015\Projects\WinForm_TrackTest\Debug\WinForm_TrackTest.pdb (Partial PDB)

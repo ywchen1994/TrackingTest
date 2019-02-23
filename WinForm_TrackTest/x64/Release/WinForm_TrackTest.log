@@ -1,0 +1,29 @@
+﻿  MyForm.cpp
+c:\users\ywchen1994\documents\visual studio 2015\projects\winform_tracktest\winform_tracktest\MyForm.h(179): warning C4244: '=': 將 '__int64' 轉換為 'uint'，由於類型不同，可能導致資料遺失
+c:\opencv342\build\include\opencv2\core\cvstd.hpp(575): warning C4793: 'cv::String::String': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\cuda.inl.hpp(105): warning C4793: 'cv::cuda::GpuMat::GpuMat': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\cuda.inl.hpp(395): warning C4793: 'cv::cuda::HostMem::HostMem': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(483): warning C4793: 'cv::Mat::Mat': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\fast_math.hpp(105): warning C4793: '`anonymous namespace'::cvRound': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\fast_math.hpp(106): warning C4793: '`anonymous namespace'::cvRound': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(807): warning C4793: 'cv::Mat::release': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(2141): warning C4793: 'cv::SparseMat::addref': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\mat.inl.hpp(3741): warning C4793: 'cv::UMat::addref': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\ptr.inl.hpp(67): warning C4793: 'cv::detail::PtrOwner::incRef': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\ptr.inl.hpp(72): warning C4793: 'cv::detail::PtrOwner::decRef': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+c:\opencv342\build\include\opencv2\core\cvstd.hpp(657): warning C4793: 'cv::String::operator=': 函式會編譯成機器碼:
+  	找到 Managed 程式碼中不支援的內建
+  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+  WinForm_TrackTest.vcxproj -> C:\Users\ywChen1994\Documents\Visual Studio 2015\Projects\WinForm_TrackTest\x64\Release\WinForm_TrackTest.exe
+  WinForm_TrackTest.vcxproj -> C:\Users\ywChen1994\Documents\Visual Studio 2015\Projects\WinForm_TrackTest\x64\Release\WinForm_TrackTest.pdb (Full PDB)

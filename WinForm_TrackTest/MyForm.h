@@ -19,9 +19,7 @@ namespace WinForm_TrackTest {
 	using namespace cv;
 	using namespace std;
 	VideoCapture cap;
-	MultiTracker tracker;
-
-	vector<Rect2d> objects;
+	Ptr<MultiTracker> multiTracker = cv::MultiTracker::create();
 	fstream fp;
 	bool Is_initial = false;
 	/// <summary>
@@ -99,7 +97,7 @@ namespace WinForm_TrackTest {
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
-			this->button1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::button1_KeyDown);
+
 			// 
 			// timer1
 			// 
@@ -217,7 +215,7 @@ namespace WinForm_TrackTest {
 	private: vector<Rect2d> VirtualOD(Mat frame)
 	{
 		vector<Rect2d> OD;
-		char line[100];
+		char line[1000];
 		fp.getline(line, sizeof(line), '\n');
 		System::String^ str = gcnew System::String(line);
 		if (str != "")
@@ -309,35 +307,31 @@ namespace WinForm_TrackTest {
 	private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 		Mat frame;
 		cap >> frame;
-		std::vector<Ptr<Tracker> > algorithms;
 		vector<Rect2d>NewOD = VirtualOD(frame);
 		vector<Rect2d>NewObj;
 		if (!Is_initial)
 		{
-			algorithms.resize(0);
-			for (uint i = 0; i < NewOD.size(); i++)
-				algorithms.push_back(TrackerKCF::create());
-
+			for(uint i=0;i<NewOD.size();i++)
+				multiTracker->add(TrackerMedianFlow::create(), frame, Rect2d(NewOD[i]));
+			
 			NewObj = NewOD;
-
+			
 			Is_initial = true;
 		}
 		else
 		{
-			algorithms.resize(0);
-			tracker.update(frame);
-			vector<Rect2d> trckResult = tracker.getObjects();
+			multiTracker->update(frame);
+			vector<Rect2d> trckResult = multiTracker->getObjects();
 			Mat frameDebug;
 			frame.copyTo(frameDebug);
 			NewObj = CombineTROD(trckResult, NewOD, frameDebug);
-			//NewObj = CombineTROD(trckResult, NewOD, frame);
-			for (uint i = 0; i < NewOD.size(); i++)
-				algorithms.push_back(TrackerKCF::create());
+					
+			multiTracker->~MultiTracker();
+			multiTracker = cv::MultiTracker::create();
+			for (uint i = 0; i<NewObj.size(); i++)
+				multiTracker->add(TrackerMedianFlow::create(), frame, Rect2d(NewObj[i]));
+			
 		}
-		tracker.clear();
-	
-		
-		tracker.add(algorithms, frame, NewObj);
 
 
 
@@ -348,12 +342,6 @@ namespace WinForm_TrackTest {
 		ShowImage(pictureBox1, frame);
 
 	}
-	private: System::Void button1_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
-		//(e->Button == System::Windows::Forms::MouseButtons::Left)
-
-
-	}
-
 	private: System::Void MyForm_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
 		MessageBox::Show(e->KeyCode.ToString());
 	}

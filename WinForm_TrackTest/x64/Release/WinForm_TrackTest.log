@@ -1,5 +1,6 @@
 ﻿  MyForm.cpp
-c:\users\ywchen1994\documents\visual studio 2015\projects\winform_tracktest\winform_tracktest\MyForm.h(179): warning C4244: '=': 將 '__int64' 轉換為 'uint'，由於類型不同，可能導致資料遺失
+c:\users\ywchen1994\documents\visual studio 2015\projects\winform_tracktest\winform_tracktest\MyForm.h(231): warning C4244: '正在初始化': 將 '__int64' 轉換為 'uint'，由於類型不同，可能導致資料遺失
+c:\users\ywchen1994\documents\visual studio 2015\projects\winform_tracktest\winform_tracktest\MyForm.h(286): warning C4018: '<': signed/unsigned 不相符
 c:\opencv342\build\include\opencv2\core\cvstd.hpp(575): warning C4793: 'cv::String::String': 函式會編譯成機器碼:
   	找到 Managed 程式碼中不支援的內建
 c:\opencv342\build\include\opencv2\core\cuda.inl.hpp(105): warning C4793: 'cv::cuda::GpuMat::GpuMat': 函式會編譯成機器碼:
@@ -24,6 +25,5 @@ c:\opencv342\build\include\opencv2\core\ptr.inl.hpp(72): warning C4793: 'cv::det
   	找到 Managed 程式碼中不支援的內建
 c:\opencv342\build\include\opencv2\core\cvstd.hpp(657): warning C4793: 'cv::String::operator=': 函式會編譯成機器碼:
   	找到 Managed 程式碼中不支援的內建
-  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
   WinForm_TrackTest.vcxproj -> C:\Users\ywChen1994\Documents\Visual Studio 2015\Projects\WinForm_TrackTest\x64\Release\WinForm_TrackTest.exe
   WinForm_TrackTest.vcxproj -> C:\Users\ywChen1994\Documents\Visual Studio 2015\Projects\WinForm_TrackTest\x64\Release\WinForm_TrackTest.pdb (Full PDB)
